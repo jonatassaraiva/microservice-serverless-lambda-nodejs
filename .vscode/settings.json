@@ -1,0 +1,9 @@
+{ // Configure glob patterns for excluding files and folders.
+  "files.exclude": {
+    "*/**/node_modules": true,
+    "*/**/.serverless": true
+  },
+  "vsicons.associations.folders": [
+    { "icon": "script", "extensions": [".scripts"], "format": "svg" }
+  ]
+}
