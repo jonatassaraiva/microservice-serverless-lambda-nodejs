@@ -14,7 +14,7 @@ microservice.use(awsServerlessExpressMiddleware.eventContext());
 // routes
 const basePath = '/notes';
 microservice.get(basePath, (req, res) => {
-  res.status(200).send({ message: 'OK' });
+  res.status(200).send({ message: 'OK Deploy' });
 });
 
 microservice.post(basePath, (req, res) => {
