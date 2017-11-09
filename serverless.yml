@@ -1,0 +1,90 @@
+service: microservice-notes
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-east-1
+  stage: v1
+  iamRoleStatements:
+  - Effect: Allow
+    Action: 
+      - dynamodb:DescribeTable
+      - dynamodb:Query
+      - dynamodb:Scan
+      - dynamodb:GetItem
+      - dynamodb:PutItem
+      - dynamodb:UpdateItem
+      - dynamodb:DeleteItem
+    Resource: "*"
+
+functions:
+  app:
+    name: microservice-notes-${self:provider.stage}
+    handler: src/handler.microservice
+    description: Microservice to notes
+    memorySize: 512
+    timeout: 150
+    events:
+      - http:
+          method: get
+          path: notes/{id}
+          cors: true
+      - http:
+          method: get
+          path: notes
+          cors: true
+      - http:
+          method: post
+          path: notes
+          cors: true
+      - http:
+          method: put
+          path: notes
+          cors: true
+      - http:
+          method: delete
+          path: notes
+          cors: true
+
+custom:
+  stage: "${opt:stage, self:provider.stage}"
+
+resources:
+  Resources:
+    ApiGatewayRestApi:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        Name: ${self:service}-${self:custom.stage}
+    DynamoDbTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: notes
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+          - AttributeName: userId
+            KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: userId
+            KeySchema:
+              - AttributeName: userId
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 5
+              WriteCapacityUnits: 5
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+
+package:
+  exclude:
+    - .scripts/**
+    - .vscode/**
+    - tests/**

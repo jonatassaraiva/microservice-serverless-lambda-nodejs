@@ -1,0 +1,31 @@
+{
+  "name": "microservice-notes",
+  "version": "1.0.0",
+  "description": "Microservice to notes",
+  "author": "Jonatas Saraiva",
+  "license": "ISC",
+  "scripts": {
+    "lint": "eslint src/*.js src/service/*.js",
+    "test": "nyc --reporter=html --reporter=text mocha tests",
+    "open-test-result": "open coverage/index.html"
+  },
+  "dependencies": {
+    "aws-serverless-express": "^3.0.2",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "dynamodb": "^1.0.0",
+    "express": "^4.16.2",
+    "joi": "^13.0.1",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "dotenv": "^4.0.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^4.0.1",
+    "nyc": "^11.2.1",
+    "supertest": "^3.0.0"
+  }
+}

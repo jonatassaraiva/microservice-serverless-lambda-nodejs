@@ -3,10 +3,12 @@
 //
 // external modules
 const awsServerlessExpress = require('aws-serverless-express');
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
 
 //
 // microservice
-const microservice = require('./service');
+const microservice = require('./api');
+microservice.use(awsServerlessExpressMiddleware.eventContext());
 
 //
 // exposed microservice

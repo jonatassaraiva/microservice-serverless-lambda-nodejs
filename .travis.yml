@@ -5,10 +5,8 @@ node_js:
 cache:
   directories:
     - node_modules
-    - src/node_modules
 
 before_script:
-  - cd src
   - npm install
 
 script:
