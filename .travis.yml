@@ -11,6 +11,7 @@ before_script:
 
 script:
   - npm run lint
+  - npm run test
 
 after_success:
   - npm install -g serverless
