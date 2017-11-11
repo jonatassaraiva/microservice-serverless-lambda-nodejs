@@ -26,23 +26,23 @@ functions:
     timeout: 150
     events:
       - http:
+          method: post
+          path: notes/{id}
+          cors: true
+      - http:
+          method: put
+          path: notes/{id}
+          cors: true
+      - http:
+          method: delete
+          path: notes/{id}
+          cors: true
+      - http:
           method: get
           path: notes/{id}
           cors: true
       - http:
           method: get
-          path: notes
-          cors: true
-      - http:
-          method: post
-          path: notes
-          cors: true
-      - http:
-          method: put
-          path: notes
-          cors: true
-      - http:
-          method: delete
           path: notes
           cors: true
 
