@@ -1,3 +1,4 @@
 # microservice-serverless-lambda-nodejs
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3a65e9a489d444569fccacc34ea3707c)](https://www.codacy.com/app/jonatassaraiva/microservice-serverless-lambda-nodejs?utm_source=github.com&utm_medium=referral&utm_content=jonatassaraiva/microservice-serverless-lambda-nodejs&utm_campaign=badger)
 ## [![Build Status](https://travis-ci.org/jonatassaraiva/microservice-serverless-lambda-nodejs.svg?branch=master)](https://travis-ci.org/jonatassaraiva/microservice-serverless-lambda-nodejs) [![Coverage Status](https://coveralls.io/repos/github/jonatassaraiva/microservice-serverless-lambda-nodejs/badge.svg?branch=master)](https://coveralls.io/github/jonatassaraiva/microservice-serverless-lambda-nodejs?branch=master) 
 Project sample to microservices with lambda and nodejs
