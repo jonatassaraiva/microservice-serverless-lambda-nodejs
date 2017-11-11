@@ -1,5 +1,5 @@
 {
-  "name": "microservice-notes",
+  "name": "microservice-serverless-lambda-nodejs",
   "version": "1.0.0",
   "description": "Microservice to notes",
   "author": "Jonatas Saraiva",
@@ -7,8 +7,8 @@
   "scripts": {
     "lint": "eslint src/*.js src/service/*.js",
     "test": "nyc --reporter=html --reporter=text mocha tests",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "open-test-result": "open coverage/index.html"
+    "open-test-result": "open coverage/index.html",
+    "codacy": "istanbul cover ./node_modules/mocha/bin/_mocha tests --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage"
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.2",
@@ -21,12 +21,14 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "coveralls": "^3.0.0",
+    "codacy-coverage": "^2.0.3",
     "dotenv": "^4.0.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
+    "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^11.2.1",
     "supertest": "^3.0.0"
   }
