@@ -14,11 +14,11 @@ script:
 #  - npm run test
 
 after_success:
-  - chmod +x $TRAVIS_BUILD/scripts/deploy.sh
+  - chmod +x ./scripts/deploy.sh
 
 deploy:
   provider: script
-  script: sh $TRAVIS_BUILD/scripts/deploy.sh
+  script: sh scripts/deploy.sh
   on:
     all_branches: true
 # - npm run codacy
