@@ -51,6 +51,10 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run: 
+          name: NPM Install
+          command: 'npm install'
+
       - deploy:
           name: Deploy
           command: 'npm run deploy'
