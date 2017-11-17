@@ -11,7 +11,7 @@ before_script:
 
 script:
   - npm run lint
-#  - npm run test
+  - npm run codacy
 
 deploy:
   provider: script

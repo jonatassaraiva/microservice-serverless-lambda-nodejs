@@ -2,7 +2,7 @@
 
 //
 // internal modules
-const notesRepositoy = require('./repository');
+const notesRepositoy = require('./repositories/note.repository');
 const { responseHelper } = require('../helpers');
 
 const notesController = {
