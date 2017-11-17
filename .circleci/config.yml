@@ -6,13 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/node:6.12
-      
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
 
     working_directory: ~/repo
 
@@ -27,11 +21,7 @@ jobs:
           - v1-dependencies-
 
       - run: 
-          name: cd-src
-          command: 'cd src'
-
-      - run: 
-          name: npm-install
+          name: NPM Install
           command: 'npm install'
 
       - save_cache:
@@ -40,7 +30,40 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: 
-          name: npm-lint
+          name: NPM Lint
           command: 'npm run lint'
 
+      - run: 
+          name: NPM Codacy
+          command: 'npm run codacy'
 
+  deploy:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:6.12
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: 
+          name: NPM Install
+          command: 'npm install'
+
+      - deploy:
+          name: Deploy
+          command: 'npm run deploy'
+
+workflows:
+  version: 2
+  build-and-tests:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
