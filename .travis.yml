@@ -14,7 +14,9 @@ script:
 #  - npm run test
 
 deploy:
-  - provider: script
-    script: scripts/deploy.sh
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    all_branches: true
 #  - npm run codacy
 # - npm run deploy
