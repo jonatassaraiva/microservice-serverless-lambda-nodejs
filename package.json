@@ -8,8 +8,7 @@
     "lint": "eslint src/*.js src/service/*.js",
     "test": "nyc --reporter=html --reporter=text mocha tests",
     "open-test-result": "open coverage/index.html",
-    "codacy": "istanbul cover ./node_modules/mocha/bin/_mocha tests --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage",
-    "deploy": "node_modules/.bin/serverless deploy"
+    "codacy": "istanbul cover ./node_modules/mocha/bin/_mocha tests --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage"
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.2",

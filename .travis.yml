@@ -13,6 +13,8 @@ script:
   - npm run lint
 #  - npm run test
 
-after_success:
+deploy:
+  - provider: script
+  script: scripts/deploy.sh staging
 #  - npm run codacy
-  - npm run deploy
+# - npm run deploy
