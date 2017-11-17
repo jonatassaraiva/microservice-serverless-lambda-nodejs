@@ -15,6 +15,6 @@ script:
 
 deploy:
   - provider: script
-  script: scripts/deploy.sh staging
+    script: scripts/deploy.sh
 #  - npm run codacy
 # - npm run deploy
