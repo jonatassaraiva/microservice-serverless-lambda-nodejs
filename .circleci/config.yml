@@ -49,6 +49,10 @@ jobs:
           command: 'npm run lint'
 
       - run: 
+          name: CD SRC
+          command: 'cd src'
+
+      - run: 
           name: NPM Tests
           command: 'npm run test'
 
