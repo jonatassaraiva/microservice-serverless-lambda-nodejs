@@ -13,9 +13,6 @@ script:
   - npm run lint
 #  - npm run test
 
-after_success:
-  - chmod +x ./scripts/*.sh
-
 deploy:
   provider: script
   script: 'node_modules/.bin/serverless deploy'
