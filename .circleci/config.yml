@@ -28,17 +28,19 @@ jobs:
 
       - run: 
           name: cd-src
-          command:
-            - cd src
+          command: 'cd src'
 
       - run: 
           name: npm-install
-          command:
-            - npm install
+          command: 'npm install'
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: 
+          name: npm-lint
+          command: 'npm run lint'
 
 
