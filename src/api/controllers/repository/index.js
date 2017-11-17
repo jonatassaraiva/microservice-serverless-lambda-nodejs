@@ -6,7 +6,7 @@ const Promise = require('bluebird');
 const uuidv4 = require('uuid/v4');
 
 // internal modules
-const NotesModule = require('../../models');
+const NotesModule = require('../../models/notes.model');
 const { errorsHelper } = require('../../helpers');
 const { MicroServiceError } = errorsHelper;
 
