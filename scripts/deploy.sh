@@ -1,3 +1,3 @@
 #!/bin/bash
-npm install -g serverless
-sls deploy
+#npm install -g serverless
+npm run deploy
