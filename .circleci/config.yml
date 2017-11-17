@@ -39,6 +39,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+  tests:
+    steps:
       - run: 
           name: NPM Lint
           command: 'npm run lint'
@@ -47,4 +49,11 @@ jobs:
           name: NPM Tests
           command: 'npm run test'
 
-
+workflows:
+  version: 2
+  build-and-tests:
+    jobs:
+      - build
+      - tests:
+          requires:
+            - build
