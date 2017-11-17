@@ -15,7 +15,7 @@ script:
 
 deploy:
   provider: script
-  script: 'node_modules/.bin/serverless deploy'
+  script: 'npm run deploy'
   on:
     all_branches: true
 #  - npm run codacy
