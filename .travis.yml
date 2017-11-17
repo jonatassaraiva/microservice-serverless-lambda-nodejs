@@ -14,5 +14,5 @@ script:
 #  - npm run test
 
 after_success:
-  - npm run codacy
-#  - npm run deploy
+#  - npm run codacy
+  - npm run deploy
