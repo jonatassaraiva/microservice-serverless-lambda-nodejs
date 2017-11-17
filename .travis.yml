@@ -13,6 +13,9 @@ script:
   - npm run lint
 #  - npm run test
 
+after_success:
+  - chmod +x $TRAVIS_BUILD/scripts/deploy.sh
+
 deploy:
   provider: script
   script: sh $TRAVIS_BUILD/scripts/deploy.sh
