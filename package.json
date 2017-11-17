@@ -8,7 +8,8 @@
     "lint": "eslint src/*.js src/service/*.js",
     "test": "nyc --reporter=html --reporter=text mocha tests",
     "open-test-result": "open coverage/index.html",
-    "codacy": "istanbul cover ./node_modules/mocha/bin/_mocha tests --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage"
+    "codacy": "istanbul cover ./node_modules/mocha/bin/_mocha tests --report lcovonly -- -R spec && cat ./coverage/lcov.info | codacy-coverage",
+    "deploy": "sls deploy"
   },
   "dependencies": {
     "aws-serverless-express": "^3.0.2",
@@ -30,6 +31,7 @@
     "mocha": "^4.0.1",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^11.2.1",
+    "serverless": "^1.24.1",
     "supertest": "^3.0.0"
   }
 }

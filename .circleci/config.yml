@@ -44,16 +44,16 @@ jobs:
     steps:
       - checkout
 
-      - run: 
-          name: NPM Install
-          command: 'npm install'
-
-      - run: 
-          name: NPM Install Serverless
-          command: 'sudo npm install -g serverless'
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
 
       - deploy:
-          command: 'sls deploy'
+          name: Deploy
+          command: 'npm run deploy'
 
 workflows:
   version: 2
