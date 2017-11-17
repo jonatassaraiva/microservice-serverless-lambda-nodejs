@@ -18,7 +18,7 @@ after_success:
 
 deploy:
   provider: script
-  script: scripts/deploy.sh
+  script: 'node_modules/.bin/serverless deploy'
   on:
     all_branches: true
 #  - npm run codacy
