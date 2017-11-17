@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "arrow-parens": "off",
+    "arrow-body-style": "off",
+    "strict": "off",
+    "comma-dangle": "off",
+    "eol-last": "off",
+    "no-underscore-dangle": "off",
+    "max-len": ["error", 150, { "ignoreUrls": true }],
+    "consistent-return": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-shadow": "off",
+    "no-param-reassign": "off",
+    "function-paren-newline": "off",
+    "object-curly-newline": "off",
+    "import/newline-after-import": "off"
+  },
+  "globals": {
+    "describe": true,
+    "it": true
+  }
+}
