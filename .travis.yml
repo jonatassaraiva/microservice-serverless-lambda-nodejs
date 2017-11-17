@@ -17,7 +17,7 @@ deploy:
   provider: script
   script: sh scripts/deploy.sh
   on:
-    all_branches: true
+    branche: master
 # - npm run codacy
 # - npm run deploy
 #  script: sh $TRAVIS_BUILD/scripts/deploy.sh
