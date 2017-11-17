@@ -27,11 +27,11 @@ jobs:
           - v1-dependencies-
 
       - run: 
-          name: cd-src
+          name: CD SRC
           command: 'cd src'
 
       - run: 
-          name: npm-install
+          name: NPM Install
           command: 'npm install'
 
       - save_cache:
@@ -40,7 +40,11 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: 
-          name: npm-lint
+          name: NPM Lint
           command: 'npm run lint'
+
+      - run: 
+          name: NPM Tests
+          command: 'npm run test'
 
 
