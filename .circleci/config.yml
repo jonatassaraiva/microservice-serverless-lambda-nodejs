@@ -37,15 +37,6 @@ jobs:
           name: NPM Codacy
           command: 'npm run codacy'
 
-  deploy:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:6.12
-    steps:
-      - run: 
-          name: NPM Install
-          command: 'npm install'
-
       - run: 
           name: NPM Install Serverless
           command: 'sudo npm install -g serverless'
