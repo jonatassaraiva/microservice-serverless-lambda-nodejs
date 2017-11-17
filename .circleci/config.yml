@@ -40,6 +40,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
   tests:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:6.12
     steps:
       - run: 
           name: NPM Lint
