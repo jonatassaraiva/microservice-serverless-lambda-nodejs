@@ -48,7 +48,7 @@ jobs:
 
       - run: 
           name: NPM Install Serverless
-          command: 'npm install -g serverless'
+          command: 'sudo npm install -g serverless'
 
       - deploy:
           command: 'sls deploy'
