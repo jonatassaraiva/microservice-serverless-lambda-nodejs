@@ -52,12 +52,3 @@ jobs:
 
       - deploy:
           command: 'sls deploy'
-
-workflows:
-  version: 2
-  build-and-tests:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
