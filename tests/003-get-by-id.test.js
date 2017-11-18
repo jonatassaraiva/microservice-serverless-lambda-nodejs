@@ -8,7 +8,7 @@ const { expect } = require('chai');
 //
 // internal modules
 const helperTest = require('./helper.test');
-const api = require('../src/api/notes.api');
+const api = require('../src/microservice/notes.microservice');
 
 describe('Get note', () => {
   const request = supertest(api);

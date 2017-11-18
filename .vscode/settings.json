@@ -6,6 +6,7 @@
     "coverage": true
   },
   "vsicons.associations.folders": [
-    { "icon": "app", "extensions": ["controllers"], "format": "svg" }
+    { "icon": "app", "extensions": ["controllers"], "format": "svg" },
+    { "icon": "api", "extensions": ["microservice"], "format": "svg" }
   ]
 }
