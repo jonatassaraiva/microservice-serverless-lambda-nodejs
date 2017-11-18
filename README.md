@@ -60,6 +60,7 @@ O problema a ser resolvido é um microservice pra Notes.
 
 ## Integração contínua
 Para integração contínua rodando lint, testes e deploy estou usando o serviço Travis. (https://travis-ci.org)
+
 Ver arquivo **.travis.yml**
 
 ## IDE
