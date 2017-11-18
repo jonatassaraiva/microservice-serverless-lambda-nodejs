@@ -59,7 +59,7 @@ O problema a ser resolvido é um microservice pra Notes.
 * ``` npm run test ```
 
 ## Integração contínua
-Para integração contínua rudando lint, testes e deploy estou usando o serviço Travis. (https://travis-ci.org)
+Para integração contínua rodando lint, testes e deploy estou usando o serviço Travis. (https://travis-ci.org)
 Ver arquivo **.travis.yml**
 
 ## IDE
