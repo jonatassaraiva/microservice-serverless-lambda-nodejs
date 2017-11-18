@@ -8,7 +8,7 @@ const { expect } = require('chai');
 //
 // internal modules
 const helperTest = require('./helper.test');
-const api = require('../src/api');
+const api = require('../src/api/notes.api');
 
 describe('Create, Update and Delete notes', () => {
   const request = supertest(api);

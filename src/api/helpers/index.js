@@ -1,11 +1,11 @@
 'use strict';
 
-const errorsHelper = require('./errors');
-const requestHelper = require('./request');
-const responseHelper = require('./response');
+const ErrorHelper = require('./modules/error.helper');
+const requestHelper = require('./modules/request.helper');
+const responseHelper = require('./modules/response.helper');
 
 module.exports = {
-  errorsHelper,
+  ErrorHelper,
   requestHelper,
   responseHelper
 };

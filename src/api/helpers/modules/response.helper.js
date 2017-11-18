@@ -2,8 +2,8 @@
 
 //
 // internal module
-const { MicroServiceError } = require('../errors');
-const requestHelper = require('../request');
+const ErrorHelper = require('./error.helper');
+const requestHelper = require('./request.helper');
 
 const ENABLE_LOG_ERROR = process.env.ENABLE_LOG_ERROR === 'true';
 
@@ -18,7 +18,7 @@ const responseHelper = {
       /* eslint-enable no-console */
     }
 
-    if (err instanceof MicroServiceError) {
+    if (err instanceof ErrorHelper) {
       const { code, message } = err;
       const errorResponse = {
         error: {
