@@ -61,8 +61,6 @@ O problema a ser resolvido é um microservice pra Notes.
 ## Integração contínua
 Para integração contínua rodando lint, testes e deploy estou usando o serviço Travis. (https://travis-ci.org)
 
-Ver arquivo **.travis.yml**
-
 ## IDE
 Um dos melhores editores para node.js é o VSCODE (https://code.visualstudio.com/)
 Após a instalação, é possível debugar o projeto. Basta abrir o projeto na IDE e pressionar **F5** 
