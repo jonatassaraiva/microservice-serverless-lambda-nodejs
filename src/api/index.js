@@ -12,7 +12,7 @@ microservice.use(bodyParser.json());
 
 //
 // internal modules
-const notesController = require('./controllers');
+const notesController = require('./controllers/notes.controller');
 
 //
 // routes
