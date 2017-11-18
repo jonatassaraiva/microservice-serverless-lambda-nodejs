@@ -12,4 +12,27 @@ Se pesquisarmos por "O que é um microsserviço?" vamos encontrar muitos artigos
 
 Seguindo estas caracteristica, este repositório apresenta um proposta de microservice usando uma arquitetura serverless com os recursos de nuvem AWS. 
 
-O problema aqui resolvido é um microservice pra Notes.
+O problema a ser resolvido é um microservice pra Notes.
+
+## Instalação
+1. Node.js (https://nodejs.org/en/)
+
+2. Clonar o repositódio 
+
+``` git clone https://github.com/jonatassaraiva/microservice-serverless-lambda-nodejs.git ```
+
+3. Acessar o repositório 
+
+``` cd  microservice-serverless-lambda-nodejs ```
+
+4. Instlar as dependência 
+
+``` npm install ```
+
+5. Instalar Serverless Framework, um toolkit para deploy e operação para applicações sem servidor
+
+``` npm install serverless -g ```
+
+6. Deploy. Subistituir os valores *<value>*
+
+``` AWS_ACCESS_KEY_ID=<value> AWS_SECRET_ACCESS_KEY=<valeu> AWS_REGION=<value> sls deploy ```
