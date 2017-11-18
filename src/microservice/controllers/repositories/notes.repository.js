@@ -6,9 +6,8 @@ const Promise = require('bluebird');
 const uuidv4 = require('uuid/v4');
 
 // internal modules
-const NotesModule = require('../../models');
-const { errorsHelper } = require('../../helpers');
-const { MicroServiceError } = errorsHelper;
+const NotesModule = require('../../models/notes.model');
+const { ErrorHelper } = require('../../helpers');
 
 const _getById = (id, userId, name = 'notesRepository.getById') => {
   return new Promise((resolve, reject) => {
@@ -22,7 +21,7 @@ const _getById = (id, userId, name = 'notesRepository.getById') => {
           return resolve(notesInDb.attrs);
         }
 
-        const notFound = new MicroServiceError(name, `Note, ${id}, not found.`, 404);
+        const notFound = new ErrorHelper(name, `Note, ${id}, not found.`, 404);
         return reject(notFound);
       });
   });

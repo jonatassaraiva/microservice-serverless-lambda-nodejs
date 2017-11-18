@@ -1,6 +1,6 @@
 'user strict';
 
-class MicroServiceError extends Error {
+class ErrorHelper extends Error {
   constructor(name, message, code) {
     super(message);
     this.name = name;
@@ -8,6 +8,4 @@ class MicroServiceError extends Error {
   }
 }
 
-module.exports = {
-  MicroServiceError
-};
+module.exports = ErrorHelper;
