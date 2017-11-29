@@ -15,7 +15,7 @@ dynamo.AWS.config.update({
 
 //
 // microservice with express
-const microservice = require('../src/microservice/notes.microservice');
+const microservice = require('../src/microservice');
 
 microservice.listen(process.env.PORT || 3000, () => {
   /* eslint-disable no-console */

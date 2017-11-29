@@ -8,7 +8,7 @@ const { expect } = require('chai');
 //
 // internal modules
 const helperTest = require('./helper.test');
-const api = require('../src/microservice/notes.microservice');
+const api = require('../src/microservice');
 
 describe('Create, Update and Delete notes', () => {
   const request = supertest(api);

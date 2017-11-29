@@ -7,7 +7,7 @@ const awsServerlessExpressMiddleware = require('aws-serverless-express/middlewar
 
 //
 // microservice
-const microservice = require('./microservice/notes.microservice');
+const microservice = require('./microservice');
 microservice.use(awsServerlessExpressMiddleware.eventContext());
 
 //
