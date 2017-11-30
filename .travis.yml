@@ -13,16 +13,21 @@ cache:
 jobs:
   include:
     - stage: lint
-      script: npm run lint
-    - stage: tests
       node_js: "6"
-      script: npm run codacy
+      script: npm run lint
+
+    - stage: lint
+      node_js: "7"
+      script: npm run lint
+
     - stage: tests
       node_js: "7"
       script: npm run codacy
+
     - stage: tests
       node_js: "8"
       script: npm run codacy
+
     - stage: deploy
       if: ((branch = master) AND (type IN (push)))
       node_js: "6"
