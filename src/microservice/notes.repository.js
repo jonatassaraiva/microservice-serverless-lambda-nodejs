@@ -6,8 +6,8 @@ const Promise = require('bluebird');
 const uuidv4 = require('uuid/v4');
 
 // internal modules
-const NotesModule = require('../../models/notes.model');
-const { ErrorHelper } = require('../../helpers');
+const NotesModule = require('./notes.model');
+const { ErrorHelper } = require('../helpers');
 
 const _getById = (id, userId, name = 'notesRepository.getById') => {
   return new Promise((resolve, reject) => {

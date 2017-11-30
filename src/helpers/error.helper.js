@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 class ErrorHelper extends Error {
   constructor(name, message, code) {
