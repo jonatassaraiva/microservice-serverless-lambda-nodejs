@@ -6,18 +6,27 @@ cache:
   directories:
     - "node_modules"
 
-before_script:
-  - npm install
+cache:
+  directories:
+    - "node_modules"
 
-script:
-  - npm run lint
-  - npm run codacy
-
-deploy:
-  provider: script
-  script: sh scripts/deploy.sh
-  on:
-    branche: master
-# - npm run codacy
-# - npm run deploy
-#  script: sh $TRAVIS_BUILD/scripts/deploy.sh
+jobs:
+  include:
+    - stage: lint
+      script: npm run lint
+    - stage: tests
+      node_js: "6"
+      script: npm run codacy
+    - stage: tests
+      node_js: "7"
+      script: npm run codacy
+    - stage: tests
+      node_js: "8"
+      script: npm run codacy
+    - stage: deploy
+      if: ((branch = master) AND (type IN (push)))
+      node_js: "6"
+      script: skip
+      deploy:
+        provider: script
+        script: sh scripts/deploy.sh
