@@ -24,10 +24,9 @@ jobs:
       node_js: "8"
       script: npm run codacy
     - stage: deploy
+      if: branch = master
       node_js: "6"
       script: skip
       deploy:
         provider: script
         script: sh scripts/deploy.sh
-        on:
-          branche: master
