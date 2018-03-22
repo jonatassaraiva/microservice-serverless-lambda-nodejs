@@ -1,10 +1,11 @@
 'user strict';
 
 class ErrorHelper extends Error {
-  constructor(name, message, code) {
+  constructor(message, httpStatusCode, category) {
     super(message);
-    this.name = name;
-    this.code = code;
+    this.httpStatusCode = httpStatusCode;
+    this.category = category;
+    this.code = `${httpStatusCode}-${category}`;
   }
 }
 

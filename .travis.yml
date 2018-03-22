@@ -27,6 +27,6 @@ jobs:
       if: ((branch = master) AND (type IN (push)))
       node_js: "6"
       script: skip
-      deploy:
-        provider: script
-        script: sh scripts/deploy.sh
+#      deploy:
+#        provider: script
+#        script: sh scripts/deploy.sh

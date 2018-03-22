@@ -1,3 +1,2 @@
 #!/bin/bash
-npm install -g serverless
-sls deploy
+DEPLOYMENT_BUCKET=deployment-serverless sls deploy --aws-profile saraiva

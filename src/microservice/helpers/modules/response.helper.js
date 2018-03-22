@@ -19,7 +19,7 @@ const responseHelper = {
     }
 
     if (err instanceof ErrorHelper) {
-      const { code, message } = err;
+      const { message, code, httpStatusCode } = err;
       const errorResponse = {
         error: {
           code,
@@ -27,7 +27,7 @@ const responseHelper = {
         },
         requestId: requestHelper.getRequestId(req)
       };
-      return res.status(code).json(errorResponse);
+      return res.status(httpStatusCode).json(errorResponse);
     }
 
     const errorResponse = {

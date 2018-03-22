@@ -14,7 +14,7 @@
     "aws-serverless-express": "^3.0.2",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
-    "dynamodb": "^1.0.0",
+    "dynamoose": "^0.8.6",
     "express": "^4.16.2",
     "joi": "^13.0.1",
     "uuid": "^3.1.0"

@@ -2,14 +2,14 @@
 
 //
 // internal modules
-const notesRepositoy = require('./repositories/notes.repository');
-const { responseHelper } = require('../helpers');
+const { responseHelper } = require('./helpers');
+const repository = require('./repository');
 
 const notesController = {
-  getById(req, res) {
-    const { id } = req.params;
+  get(req, res) {
     const userId = req.headers['x-user-id'];
-    notesRepositoy.getById(id, userId)
+    const { id } = req.params;
+    repository.getByUserAndId(userId, id)
       .then(result => {
         responseHelper.success(req, res, result);
       })
@@ -20,9 +20,7 @@ const notesController = {
 
   getAll(req, res) {
     const userId = req.headers['x-user-id'];
-    const { limit, startKey } = req.query;
-
-    notesRepositoy.getAllByUser(userId, startKey, limit)
+    repository.getAllByUser(userId)
       .then(result => {
         responseHelper.success(req, res, result);
       })
@@ -33,9 +31,14 @@ const notesController = {
 
   create(req, res) {
     const userId = req.headers['x-user-id'];
-    notesRepositoy.create(req.body, userId)
+    const note = {
+      title: req.body.title,
+      content: req.body.content
+    };
+
+    repository.create(userId, note)
       .then(result => {
-        responseHelper.success(req, res, result, 201);
+        responseHelper.success(req, res, result);
       })
       .catch(err => {
         responseHelper.error(req, res, err);
@@ -43,12 +46,12 @@ const notesController = {
   },
 
   update(req, res) {
-    const { id } = req.params;
     const userId = req.headers['x-user-id'];
+    const { id } = req.params;
     const { title, content } = req.body;
-    notesRepositoy.update({ id, userId, title, content }, userId)
+    repository.update(userId, id, { title, content })
       .then(result => {
-        responseHelper.success(req, res, result, 200);
+        responseHelper.success(req, res, result);
       })
       .catch(err => {
         responseHelper.error(req, res, err);
@@ -58,9 +61,9 @@ const notesController = {
   delete(req, res) {
     const { id } = req.params;
     const userId = req.headers['x-user-id'];
-    notesRepositoy.delete(id, userId)
+    repository.delete(userId, id)
       .then(result => {
-        responseHelper.success(req, res, result, 200);
+        responseHelper.success(req, res, result);
       })
       .catch(err => {
         responseHelper.error(req, res, err);

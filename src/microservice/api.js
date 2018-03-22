@@ -12,15 +12,15 @@ microservice.use(bodyParser.json());
 
 //
 // internal modules
-const notesController = require('./controllers/notes.controller');
+const notesController = require('./controller');
 
 //
 // routes
-microservice.get('/notes/:id', notesController.getById);
+microservice.get('/notes', notesController.getAll);
+microservice.get('/notes/:id', notesController.get);
+microservice.post('/notes', notesController.create);
 microservice.put('/notes/:id', notesController.update);
 microservice.delete('/notes/:id', notesController.delete);
 
-microservice.get('/notes', notesController.getAll);
-microservice.post('/notes', notesController.create);
 
 module.exports = microservice;
